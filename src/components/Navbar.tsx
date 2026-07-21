@@ -112,16 +112,16 @@ export function Navbar({ onScrollTo }: NavbarProps) {
             {/* Logo */}
             <a
               href="#home"
-              className="flex items-center gap-3 cursor-pointer group"
+              className="flex items-center gap-2 md:gap-3 cursor-pointer group whitespace-nowrap"
               onClick={(e) => handleNavClick(e, "home")}
             >
               <img
                 src={logoStandalone}
                 alt="CorePeak Creatives Logo"
-                className="w-9 h-9 object-contain group-hover:scale-105 transition-transform"
+                className="w-7 h-7 md:w-9 md:h-9 object-contain group-hover:scale-105 transition-transform"
               />
               <span className="text-lg md:text-xl font-extrabold tracking-tight text-[#15294A] dark:text-white">
-                CorePeak <span className="text-[#D4AF37]">Creatives</span>
+                CorePeak <span className="text-[#D4AF37] hidden sm:inline">Creatives</span>
               </span>
             </a>
 
@@ -159,14 +159,6 @@ export function Navbar({ onScrollTo }: NavbarProps) {
 
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-2">
-              <Button
-                onClick={() => setConsultModalOpen(true)}
-                size="sm"
-                className="bg-[#15294A] text-white font-medium rounded-full px-3 text-xs flex items-center gap-1.5 shadow-sm border border-[#D4AF37]/40"
-              >
-                <Calendar size={13} className="text-[#D4AF37]" />
-                <span>Start a Project</span>
-              </Button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-[#15294A] dark:text-slate-200 hover:bg-slate-200 transition-colors"
