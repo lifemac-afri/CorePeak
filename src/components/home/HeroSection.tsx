@@ -102,20 +102,17 @@ export function HeroSection({ onScrollTo }: HeroSectionProps) {
         <motion.div variants={FADE_UP} className="mt-8 flex items-center gap-4">
           <Button
             size="lg"
-            onClick={() => handleScroll("services")}
-            className="bg-[#15294A] hover:bg-[#1c3660] text-white border border-[#D4AF37]/50 shadow-xl shadow-[#15294A]/20 rounded-full h-14 px-9 text-base font-bold group"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-consult-modal"))}
+            className="bg-[#15294A] hover:bg-[#1c3660] text-white border border-[#D4AF37]/50 shadow-xl shadow-[#15294A]/20 rounded-full h-14 px-6 text-base font-bold group"
           >
             Start a Project
-            <ArrowRight className="ml-2 w-5 h-5 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
+
+            <div className="border border-[#D4AF37]/20 rounded-full p-2 bg-white flex items-center justify-center ml-4" >
+
+              <ArrowRight className="w-8 h-8 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
+            </div>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => handleScroll("about")}
-            className="rounded-full h-14 px-7 text-base font-semibold border-2 border-[#15294A]/20 text-[#15294A] hover:border-[#15294A] hover:bg-[#15294A]/5 transition-colors"
-          >
-            View Our Work
-          </Button>
+
         </motion.div>
 
         {/* Trust bar */}
@@ -132,7 +129,7 @@ export function HeroSection({ onScrollTo }: HeroSectionProps) {
             ))}
           </div>
           <span>
-            Trusted by <strong className="text-[#15294A]">50+</strong>{" "}
+            Trusted by <strong className="text-[#15294A]">5+</strong>{" "}
             organisations &amp; growing
           </span>
         </motion.div>

@@ -54,6 +54,12 @@ export function Navbar({ onScrollTo }: NavbarProps) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleOpenModal = () => setConsultModalOpen(true);
+    window.addEventListener("open-consult-modal", handleOpenModal);
+    return () => window.removeEventListener("open-consult-modal", handleOpenModal);
+  }, []);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -146,7 +152,7 @@ export function Navbar({ onScrollTo }: NavbarProps) {
                 className="relative overflow-hidden bg-[#15294A] hover:bg-[#1c3660] text-white border border-[#D4AF37]/50 font-semibold rounded-full px-5 py-2.5 shadow-md shadow-[#15294A]/20 hover:shadow-lg hover:shadow-[#D4AF37]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center gap-2 text-sm"
               >
                 <Calendar size={16} className="text-[#D4AF37]" />
-                <span>Book a Consult</span>
+                <span>Start a Project</span>
                 <ArrowRight size={15} className="ml-0.5 text-[#D4AF37] group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </div>
@@ -159,7 +165,7 @@ export function Navbar({ onScrollTo }: NavbarProps) {
                 className="bg-[#15294A] text-white font-medium rounded-full px-3 text-xs flex items-center gap-1.5 shadow-sm border border-[#D4AF37]/40"
               >
                 <Calendar size={13} className="text-[#D4AF37]" />
-                <span>Consult</span>
+                <span>Start a Project</span>
               </Button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -209,7 +215,7 @@ export function Navbar({ onScrollTo }: NavbarProps) {
                   className="w-full bg-[#15294A] hover:bg-[#1c3660] text-white font-bold rounded-2xl py-3 shadow-lg shadow-[#15294A]/20 flex items-center justify-center gap-2 border border-[#D4AF37]/50"
                 >
                   <Calendar size={18} className="text-[#D4AF37]" />
-                  <span>Book a Consultation</span>
+                  <span>Start a Project</span>
                 </Button>
               </div>
             </motion.div>
