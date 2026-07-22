@@ -7,7 +7,7 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        "CorePeak Creatives delivered our website on time and exactly to brief. The attention to detail in both the design and the communication throughout was exceptional.",
+        "Core Peak Creatives delivered our website on time and exactly to brief. The attention to detail in both the design and the communication throughout was exceptional.",
       author: "Adjoa Mensah",
       role: "Executive Director, Harmonia NGO",
       avatar: "https://i.pravatar.cc/150?img=5",

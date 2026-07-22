@@ -27,12 +27,12 @@ export function Footer({ onScrollTo }: FooterProps) {
             <div className="mb-6 cursor-pointer inline-block" onClick={() => handleScroll("home")}>
               <img
                 src={logoWithTextWhite}
-                alt="CorePeak Creatives"
+                alt="Core Peak Creatives"
                 className="h-8 object-contain"
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-16 max-w-[300px]">
-              CorePeak helps organizations transform complex challenges into beautiful, reliable digital solutions with industry-leading precision.
+              Core Peak helps organizations transform complex challenges into beautiful, reliable digital solutions with industry-leading precision.
             </p>
 
             <p className="text-slate-400 text-xs">
@@ -116,7 +116,7 @@ export function Footer({ onScrollTo }: FooterProps) {
             color: 'transparent'
           }}
         >
-          corepeak
+          Core Peak
         </h1>
       </div>
     </footer>

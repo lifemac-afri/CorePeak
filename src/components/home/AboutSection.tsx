@@ -22,11 +22,11 @@ export function AboutSection() {
 
 
             <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold mb-6 tracking-tight text-[#15294A] leading-[1.1]">
-              Meet CorePeak: <br /> Your Digital Partners
+              Meet Core Peak: <br /> Your Digital Partners
             </h2>
 
             <p className="text-[#4B5A75] text-lg leading-relaxed max-w-xl">
-              We're not just designers and developers; we're creators, problem-solvers, and your brand's best partners. At CorePeak, we live and breathe digital solutions, from captivating visuals to seamless web experiences. Think of us as an extension of your team, ready to bring your ideas to life.
+              We're not just designers and developers; we're creators, problem-solvers, and your brand's best partners. At Core Peak, we live and breathe digital solutions, from captivating visuals to seamless web experiences. Think of us as an extension of your team, ready to bring your ideas to life.
             </p>
           </motion.div>
 
@@ -41,7 +41,7 @@ export function AboutSection() {
             <div className="w-full h-80 md:h-full min-h-[300px] rounded-[2.5rem] overflow-hidden bg-slate-100 shadow-xl border-4 border-white">
               <img
                 src={heroPerson}
-                alt="CorePeak Team"
+                alt="Core Peak Team"
                 className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 transition-all duration-700"
               />
             </div>

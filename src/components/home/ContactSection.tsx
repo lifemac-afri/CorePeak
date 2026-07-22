@@ -8,7 +8,7 @@ const budgets = ["Under $5k", "$5k - $10k", "$10k - $25k", "$25k+"];
 export function ContactSection() {
   const [service, setService] = useState<string | null>(null);
   const [budget, setBudget] = useState<string | null>(null);
-  
+
   const [isCustomBudget, setIsCustomBudget] = useState(false);
   const [customBudgetValue, setCustomBudgetValue] = useState("");
 
@@ -29,13 +29,13 @@ export function ContactSection() {
   };
 
   const subject = `Inquiry: ${service || 'New Project'}`;
-  const body = `Hi CorePeak team,%0D%0A%0D%0AI'd like to talk about ${service}. My budget is ${budget}.%0D%0A%0D%0ALet's connect!`;
-  const mailtoLink = `mailto:hello@corepeak.com?subject=${subject}&body=${body}`;
+  const body = `Hi Core Peak team,%0D%0A%0D%0AI'd like to talk about ${service}. My budget is ${budget}.%0D%0A%0D%0ALet's connect!`;
+  const mailtoLink = `mailto:hello@Core Peak.com?subject=${subject}&body=${body}`;
 
   return (
     <section id="contact" className="py-20 md:py-24 bg-[#15294A] relative z-10">
       <div className="container mx-auto px-4 max-w-6xl">
-        
+
         {/* Header */}
         <div className="mb-12 md:mb-16">
           <div className="flex items-center gap-4 mb-4">
@@ -48,21 +48,21 @@ export function ContactSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          
+
           {/* Left Column: Interactive Flow */}
           <div className="lg:w-7/12">
             <div className="bg-[#0F1E3A] rounded-2xl md:rounded-3xl p-6 md:p-10 shadow-2xl border border-white/5 min-h-[350px] md:min-h-[400px] flex flex-col justify-center relative">
-              
+
               {/* Selections Summary */}
               <AnimatePresence>
                 {service && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-4 flex items-center gap-2 flex-wrap"
                   >
                     <span className="text-slate-400">I want to talk about</span>
-                    <button 
+                    <button
                       onClick={() => { setService(null); setBudget(null); setIsCustomBudget(false); }}
                       className="px-4 py-1.5 bg-white/10 text-white font-medium rounded-full text-sm hover:bg-white/20 transition-colors border border-white/10 flex items-center gap-2"
                     >
@@ -72,13 +72,13 @@ export function ContactSection() {
                   </motion.div>
                 )}
                 {budget && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-10 flex items-center gap-2 flex-wrap"
                   >
                     <span className="text-slate-400">My budget is</span>
-                    <button 
+                    <button
                       onClick={() => { setBudget(null); setIsCustomBudget(false); setCustomBudgetValue(""); }}
                       className="px-4 py-1.5 bg-white/10 text-white font-medium rounded-full text-sm hover:bg-white/20 transition-colors border border-white/10 flex items-center gap-2"
                     >
@@ -92,7 +92,7 @@ export function ContactSection() {
               <AnimatePresence mode="wait">
                 {/* STEP 1 */}
                 {step === 1 && (
-                  <motion.div 
+                  <motion.div
                     key="step1"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -104,7 +104,7 @@ export function ContactSection() {
                     </h3>
                     <div className="flex flex-wrap gap-2 md:gap-3">
                       {services.map(s => (
-                        <button 
+                        <button
                           key={s}
                           onClick={() => setService(s)}
                           className="px-5 py-2.5 md:px-6 md:py-3 rounded-xl border border-white/10 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-white hover:bg-white/5 transition-all bg-[#15294A] shadow-sm text-sm md:text-base"
@@ -118,7 +118,7 @@ export function ContactSection() {
 
                 {/* STEP 2 */}
                 {step === 2 && (
-                  <motion.div 
+                  <motion.div
                     key="step2"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -128,11 +128,11 @@ export function ContactSection() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
                       What is your estimated budget?
                     </h3>
-                    
+
                     {!isCustomBudget ? (
                       <div className="flex flex-wrap gap-2 md:gap-3">
                         {budgets.map(b => (
-                          <button 
+                          <button
                             key={b}
                             onClick={() => setBudget(b)}
                             className="px-5 py-2.5 md:px-6 md:py-3 rounded-xl border border-white/10 text-slate-300 font-medium hover:border-[#D4AF37] hover:text-white hover:bg-white/5 transition-all bg-[#15294A] shadow-sm text-sm md:text-base"
@@ -140,7 +140,7 @@ export function ContactSection() {
                             {b}
                           </button>
                         ))}
-                        <button 
+                        <button
                           onClick={() => setIsCustomBudget(true)}
                           className="px-5 py-2.5 md:px-6 md:py-3 rounded-xl border border-white/10 text-[#D4AF37] font-medium hover:border-[#D4AF37] hover:bg-white/5 transition-all bg-[#15294A] shadow-sm text-sm md:text-base"
                         >
@@ -157,7 +157,7 @@ export function ContactSection() {
                           className="flex-1 px-4 py-3 md:px-5 md:py-4 rounded-xl border border-white/10 bg-[#15294A] text-white placeholder-slate-400 focus:outline-none focus:border-[#D4AF37] transition-colors text-sm md:text-base"
                           autoFocus
                         />
-                        <button 
+                        <button
                           type="submit"
                           disabled={!customBudgetValue.trim()}
                           className="px-6 py-3 md:px-8 md:py-4 rounded-xl bg-[#D4AF37] text-white font-bold hover:bg-[#c4a133] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
@@ -171,7 +171,7 @@ export function ContactSection() {
 
                 {/* STEP 3 */}
                 {step === 3 && (
-                  <motion.div 
+                  <motion.div
                     key="step3"
                     initial={{ opacity: 0, y: 20, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -184,7 +184,7 @@ export function ContactSection() {
                       We've got everything we need to start the conversation. Shoot us an email with the details.
                     </p>
 
-                    <a 
+                    <a
                       href={mailtoLink}
                       className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-[#D4AF37] text-white font-bold hover:bg-[#c4a133] hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#D4AF37]/20"
                     >
@@ -194,7 +194,7 @@ export function ContactSection() {
                     </a>
 
                     <div className="mt-12">
-                      <button 
+                      <button
                         onClick={handleReset}
                         className="flex items-center gap-2 text-slate-500 hover:text-white font-medium text-sm transition-colors"
                       >
@@ -210,7 +210,7 @@ export function ContactSection() {
 
           {/* Right Column: Side Info Cards */}
           <div className="lg:w-5/12 flex flex-col gap-4 md:gap-6">
-            
+
             {/* Calendly Card */}
             <div className="bg-[#0F1E3A] border border-white/5 p-6 md:p-8 rounded-2xl">
               <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
@@ -242,8 +242,8 @@ export function ContactSection() {
                 <Mail className="text-[#D4AF37]" size={20} />
                 <h4 className="text-white font-bold text-base md:text-lg">Direct email</h4>
               </div>
-              <a href="mailto:hello@corepeak.com" className="text-[#D4AF37] text-sm font-bold hover:underline">
-                hello@corepeak.com
+              <a href="mailto:hello@Core Peak.com" className="text-[#D4AF37] text-sm font-bold hover:underline">
+                hello@Core Peak.com
               </a>
             </div>
 

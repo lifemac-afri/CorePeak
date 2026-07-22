@@ -117,11 +117,11 @@ export function Navbar({ onScrollTo }: NavbarProps) {
             >
               <img
                 src={logoStandalone}
-                alt="CorePeak Creatives Logo"
+                alt="Core Peak Creatives Logo"
                 className="w-7 h-7 md:w-9 md:h-9 object-contain group-hover:scale-105 transition-transform"
               />
               <span className="text-lg md:text-xl font-extrabold tracking-tight text-[#15294A] dark:text-white">
-                CorePeak <span className="text-[#D4AF37] hidden sm:inline">Creatives</span>
+                Core Peak <span className="text-[#D4AF37] hidden sm:inline">Creatives</span>
               </span>
             </a>
 
@@ -131,15 +131,13 @@ export function Navbar({ onScrollTo }: NavbarProps) {
                   key={id}
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className={`hover:text-[#15294A] dark:hover:text-[#D4AF37] transition-colors relative py-1 group font-semibold ${
-                    activeSection === id ? "text-[#15294A] dark:text-[#D4AF37]" : ""
-                  }`}
+                  className={`hover:text-[#15294A] dark:hover:text-[#D4AF37] transition-colors relative py-1 group font-semibold ${activeSection === id ? "text-[#15294A] dark:text-[#D4AF37]" : ""
+                    }`}
                 >
                   {id.charAt(0).toUpperCase() + id.slice(1)}
                   <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-[#D4AF37] transition-all duration-200 rounded-full ${
-                      activeSection === id ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+                    className={`absolute bottom-0 left-0 h-0.5 bg-[#D4AF37] transition-all duration-200 rounded-full ${activeSection === id ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
                   />
                 </a>
               ))}
@@ -186,11 +184,10 @@ export function Navbar({ onScrollTo }: NavbarProps) {
                     key={id}
                     href={`#${id}`}
                     onClick={(e) => handleNavClick(e, id)}
-                    className={`flex items-center justify-between p-3 rounded-2xl transition-colors ${
-                      activeSection === id 
-                        ? "bg-violet-50 dark:bg-slate-800 text-[#15294A] dark:text-[#D4AF37]" 
+                    className={`flex items-center justify-between p-3 rounded-2xl transition-colors ${activeSection === id
+                        ? "bg-violet-50 dark:bg-slate-800 text-[#15294A] dark:text-[#D4AF37]"
                         : "hover:bg-violet-50 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100"
-                    }`}
+                      }`}
                   >
                     <span>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
                     <ArrowRight size={16} className={activeSection === id ? "text-[#D4AF37]" : "text-slate-400"} />
